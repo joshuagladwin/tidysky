@@ -2,7 +2,7 @@ name: Run main.py
 
 on:
   schedule:
-    - cron: ${{ secrets.RUN_FREQUENCY }}
+    - cron: '0 5 * * *'
 
 jobs:
   build:
