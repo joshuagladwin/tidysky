@@ -1,8 +1,10 @@
 # TidySky
 
+[![.github/workflows/actions.yml](https://github.com/joshuagladwin/tidysky/actions/workflows/actions.yml/badge.svg)](https://github.com/joshuagladwin/tidysky/actions/workflows/actions.yml)
+
 ## Set-Up
 
-Environment Variables:
+Repository Secrets:
 
 * `<USERNAME>`
 * `<PASSWORD>`
