@@ -1,5 +1,5 @@
-from app.auth import bsky_login
-from app.util import parse_date, get_delete_date
+from auth import bsky_login
+from util import parse_date, get_delete_date
 from atproto_client import Client
 from atproto_client.models.app.bsky.feed.defs import ReasonRepost
 from datetime import datetime

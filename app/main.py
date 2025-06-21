@@ -1,7 +1,7 @@
-from app.auth import bsky_login
-from app.like import delete_old_likes
-from app.post import delete_old_posts
-from app.util import get_delete_date
+from auth import bsky_login
+from like import delete_old_likes
+from post import delete_old_posts
+from util import get_delete_date
 
 
 def main():

@@ -1,7 +1,7 @@
-from app.auth import bsky_login
+from auth import bsky_login
 from atproto import AtUri
 from atproto_client import Client
-from app.util import get_delete_date, parse_date
+from util import get_delete_date, parse_date
 
 
 def get_likes(c: Client):
