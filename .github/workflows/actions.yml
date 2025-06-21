@@ -22,4 +22,5 @@ jobs:
           pip install -r requirements.txt
 
       - name: Execute Python Script
-        run: python app/main.py
+        working-directory: ./app
+        run: python main.py
