@@ -7,7 +7,7 @@ def parse_date(d: str) -> datetime:
 
 
 def get_delete_date() -> datetime:
-    delete_days_old = int(os.environ.get("DELETE_DAYS_OLD"))
+    delete_days_old = int(os.environ["DELETE_DAYS_OLD"])
 
     if delete_days_old < 0:
         raise ValueError("DELETE_DAYS_OLD must be number greater than 0")
