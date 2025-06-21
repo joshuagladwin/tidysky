@@ -23,4 +23,4 @@ jobs:
 
       - name: Execute Python Script
         working-directory: ./app
-        run: python main.py
+        run: python -m main.py
