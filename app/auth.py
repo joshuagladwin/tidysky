@@ -4,8 +4,8 @@ import os
 
 def bsky_login() -> Client:
 
-    username = os.environ["username"]
-    password = os.environ["password"]
+    username = os.environ["USERNAME"]
+    password = os.environ["PASSWORD"]
 
     c = Client()
     c.login(username, password)
