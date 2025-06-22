@@ -9,4 +9,3 @@ Repository Secrets:
 * `<USERNAME>`
 * `<PASSWORD>`
 * `<DELETE_DAYS_OLD>`
-* `<RUN_FREQUENCY>`
