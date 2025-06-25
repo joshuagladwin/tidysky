@@ -40,18 +40,19 @@ def delete_posts(c: Client, post_list):
         else:
             deleted_post = c.delete_post(post.post.uri)
         if deleted_post:
-            print(f"Post Deleted! ({i+1}/{len(post_list)})")
+            print(f"Old Post Deleted! ({i+1}/{len(post_list)})", end="\n")
 
 
 def delete_old_posts(c: Client, del_date: datetime):
+    print("Getting Posts...")
     posts = get_posts(c)
     print(f"Total Posts: {len(posts)}")
-    print(f"Deleting Posts Older than: {del_date}")
-    print("Filtering Posts to Delete...")
+    print("Filtering Old Posts to Delete...")
     posts_to_delete = filter_posts_to_delete(posts, del_date)
-    print(f"Total Posts to Delete: {len(posts_to_delete)}")
     if len(posts_to_delete) < 1:
+        print("No Old Posts to Delete!")
         return
+    print(f"Total Old Posts to Delete: {len(posts_to_delete)}")
     delete_posts(c, posts_to_delete)
     print("Old Posts Deleted!")
 

@@ -12,7 +12,12 @@ def get_delete_date() -> datetime:
     if delete_days_old < 0:
         raise ValueError("DELETE_DAYS_OLD must be number greater than 0")
 
-    return datetime.now(UTC) - timedelta(days=delete_days_old)
+    del_date = datetime.now(UTC) - timedelta(days=delete_days_old)
+    print(
+        f"Deleting Likes & Posts Before: {del_date.strftime('%a %d %b %Y %H:%M(%Z)')}",
+        end="\n",
+    )
+    return del_date
 
 
 if __name__ == "__main__":
