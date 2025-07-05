@@ -51,7 +51,7 @@ def delete_likes(c, likes_list):
     for i, like in enumerate(likes_list):
         deleted_like = c.unlike(like.uri)
         if deleted_like:
-            print(print(f"Old Like deleted! ({i+1}/{len(likes_list)})", end="\n"))
+            print(f"Old Like Deleted! ({i+1}/{len(likes_list)})", end="\n")
 
 
 def delete_old_likes(c: Client, del_date):
