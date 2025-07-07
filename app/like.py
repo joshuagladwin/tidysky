@@ -5,6 +5,7 @@ from util import get_delete_date, parse_date
 
 
 def get_likes(c: Client):
+    print("Getting Likes...")
     like_posts = get_liked_posts(c)
     like_records = get_like_records(c, like_posts)
     return like_records
@@ -40,7 +41,11 @@ def get_like_records(c: Client, liked_list):
 
 
 def filter_likes_to_delete(like_list, del_date):
-    return [r for r in like_list if get_like_date(r) < del_date]
+    print("Filtering Old Likes to Delete...")
+    filtered_likes = [r for r in like_list if get_like_date(r) < del_date]
+    if len(filtered_likes) < 1:
+        print("No Old Likes to Delete!")
+    return filtered_likes
 
 
 def get_like_date(r):
@@ -48,24 +53,21 @@ def get_like_date(r):
 
 
 def delete_likes(c, likes_list):
+    print("Deleting Old Likes...")
     for i, like in enumerate(likes_list):
         deleted_like = c.unlike(like.uri)
         if deleted_like:
             print(f"Old Like Deleted! ({i+1}/{len(likes_list)})", end="\n")
+    print("Old Likes Deleted!", end="\n\n")
 
 
 def delete_old_likes(c: Client, del_date):
-    print("Getting Likes...")
     likes = get_likes(c)
     print(f"Total Likes: {len(likes)}")
-    print("Filtering Old Likes to Delete...")
     likes_to_delete = filter_likes_to_delete(likes, del_date)
-    if len(likes_to_delete) < 1:
-        print("No Old Likes to Delete!")
-        return
-    print(f"Total Old Likes to Delete: {len(likes_to_delete)}")
-    delete_likes(c, likes_to_delete)
-    print("Old Likes Deleted!", end="\n\n")
+    if likes_to_delete:
+        print(f"Total Old Likes to Delete: {len(likes_to_delete)}")
+        delete_likes(c, likes_to_delete)
 
 
 if __name__ == "__main__":
