@@ -7,7 +7,7 @@ on:
 env:
   USERNAME: ${{ secrets.USERNAME }}
   PASSWORD: ${{ secrets.PASSWORD }}
-  DELETE_DAYS_OLD: ${{ secrets.DELETE_DAYS_OLD }}
+  DELETE_DAYS_OLD: ${{ vars.DELETE_DAYS_OLD }}
 
 jobs:
   build:
