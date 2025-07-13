@@ -2,8 +2,8 @@ from datetime import datetime, UTC, timedelta
 import os
 
 
-def parse_date(d: str) -> datetime:
-    return datetime.fromisoformat(d)
+def get_record_date(r):
+    return datetime.fromisoformat(r.value.created_at)
 
 
 def get_delete_date() -> datetime:
@@ -14,7 +14,7 @@ def get_delete_date() -> datetime:
 
     del_date = datetime.now(UTC) - timedelta(days=delete_days_old)
     print(
-        f"Deleting Likes & Posts Before: {del_date.strftime('%a %d %b %Y %H:%M(%Z)')}",
+        f"Deleting Likes, Posts & Reposts Before: {del_date.strftime('%a %d %b %Y %H:%M(%Z)')}",
         end="\n",
     )
     return del_date
