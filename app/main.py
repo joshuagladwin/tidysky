@@ -1,7 +1,7 @@
-from app.repost import delete_old_reposts
 from auth import bsky_login
 from like import delete_old_likes
 from post import delete_old_posts
+from repost import delete_old_reposts
 from util import get_delete_date
 
 
