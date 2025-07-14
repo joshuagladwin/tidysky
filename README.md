@@ -15,3 +15,11 @@ To run as a Github action, set the following as Repository Secrets:
 * `<USERNAME>` e.g `example.bsky.social`
 * `<PASSWORD>` e.g `password1234`
 * `<DELETE_DAYS_OLD>` e.g `7`
+
+Alternatively, to run locally, as a manual script without the scheduled Github Action, ensure you have an `.env` file with the same secrets:
+
+```env
+USERNAME=example.bsky.social
+PASSWORD=password1234
+DELETE_DAYS_OLD=7
+```
