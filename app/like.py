@@ -53,7 +53,7 @@ def delete_old_likes(c: Client, del_date):
         delete_likes(c, old_likes)
         print("Old Likes Deleted!", end="\n\n")
     else:
-        print("No Old Likes to Delete!")
+        print("No Old Likes to Delete!", end="\n\n")
 
 
 if __name__ == "__main__":

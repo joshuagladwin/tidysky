@@ -54,9 +54,9 @@ def delete_old_reposts(c: Client, del_date: datetime):
     if old_reposts:
         print(f"Total Old Reposts to Delete: {len(old_reposts)}")
         delete_reposts(c, old_reposts)
-        print("Old Reposts Deleted!")
+        print("Old Reposts Deleted!", end="\n\n")
     else:
-        print("No Old Reposts to Delete!")
+        print("No Old Reposts to Delete!", end="\n\n")
 
 
 if __name__ == "__main__":

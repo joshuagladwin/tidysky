@@ -15,7 +15,7 @@ def get_delete_date() -> datetime:
     del_date = datetime.now(UTC) - timedelta(days=delete_days_old)
     print(
         f"Deleting Likes, Posts & Reposts Before: {del_date.strftime('%a %d %b %Y %H:%M(%Z)')}",
-        end="\n",
+        end="\n\n",
     )
     return del_date
 
